@@ -24,15 +24,16 @@ Server will start on local host with port 8000.
 Once the service is running, you can make HTTP requests to the API. Here's an example using curl:
 ### 4. Example API Usage
 1. Create:
+API end point to insert watch history of an user
+
 ```bash
 curl --request POST \
   --url http://localhost:8000/v1/event \
   --header 'Content-Type: application/json' \
   --data '{
-    "event_id": "123e4567-e89b-12d3-a456-42661412330",
-    "user_id": "user124",
+    "user_id": "user456",
     "event_title": "IPL Playoffs",
-    "video_id": "v1902343",
+    "video_id": "v1965343",
     "action": "SKIP",
     "duration": 120
 }
@@ -42,7 +43,7 @@ Response
 ```json
 {
 	"id": 4,
-	"user_id": "user124",
+	"user_id": "user456",
 	"event_title": "IPL Playoffs",
 	"video_id": "v1902343",
 	"action": "SKIP",
@@ -53,10 +54,10 @@ Response
 
 
 2. GET Events:
-
+API end point to get the watch history data of particular user
 ```bash
 curl --request GET \
-  --url http://localhost:8000/v1/event/user125
+  --url http://localhost:8000/v1/event/user123
 ```
 Response
 ```json
